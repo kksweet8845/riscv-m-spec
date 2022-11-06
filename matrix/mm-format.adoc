@@ -1,10 +1,10 @@
-Format for Matrix Arithmetic Instructions under OP-Xmaze1
+Format for Matrix Mask Instructions under OP-Xmaze1
 
 
-// OPZIX
+// OPZFX
 ```wavedrom
 {reg:[
-  {bits: 7, name: 0x77, attr: 'OPZIX'},
+  {bits: 7, name: 0x6b, attr: 'OPZMX'},
   {bits: 5, name: 'Md', attr: ['destination'], type: 2},
   {bits: 3, name: 0x0},
   {bits: 5, name: 'Ms1', attr: 'source 1', type: 4},
@@ -14,10 +14,10 @@ Format for Matrix Arithmetic Instructions under OP-Xmaze1
 ]}
 ```
 
-// OPZIXV
+// OPZFXV
 ```wavedrom
 {reg:[
-  {bits: 7, name: 0x77, attr: 'OPZIXV'},
+  {bits: 7, name: 0x6b, attr: 'OPZMXV'},
   {bits: 5, name: 'Md', attr: ['destination'], type: 2},
   {bits: 3, name: 0x1},
   {bits: 5, name: 'Ms1', attr: 'source 1', type: 4},
@@ -28,10 +28,10 @@ Format for Matrix Arithmetic Instructions under OP-Xmaze1
 ```
 
 
-// OPZIXS
+// OPZMXS
 ```wavedrom
 {reg:[
-  {bits: 7, name: 0x77, attr: 'OPZIXS'},
+  {bits: 7, name: 0x6b, attr: 'OPZMXS'},
   {bits: 5, name: 'Md', attr: ['destination'], type: 2},
   {bits: 3, name: 0x2},
   {bits: 5, name: 'Ms1', attr: 'source 1', type: 4},
@@ -42,18 +42,6 @@ Format for Matrix Arithmetic Instructions under OP-Xmaze1
 ```
 
 
-// OPZIXI
-```wavedrom
-{reg:[
-  {bits: 7, name: 0x77, attr: 'OPZIXI'},
-  {bits: 5, name: 'Md', attr: ['destination'], type: 2},
-  {bits: 3, name: 0x3},
-  {bits: 5, name: 'Ms1', attr: 'source 1', type: 4},
-  {bits: 5, name: 'imm[4:0]', attr: 'source 2', type: 4},
-  {bits: 1, name: 'vm'},
-  {bits: 6, name: 'funct6'}
-]}
-```
 
 
 

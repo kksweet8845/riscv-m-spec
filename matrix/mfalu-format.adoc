@@ -1,12 +1,12 @@
-Format for Matrix Arithmetic Instructions under OP-Xmaze1
+Format for Matrix Floating Point arithmetic Instructions under OP-Xmaze1
 
 
-// OPZIX
+// OPZFX
 ```wavedrom
 {reg:[
-  {bits: 7, name: 0x77, attr: 'OPZIX'},
+  {bits: 7, name: 0x77, attr: 'OPZFX'},
   {bits: 5, name: 'Md', attr: ['destination'], type: 2},
-  {bits: 3, name: 0x0},
+  {bits: 3, name: 0x4},
   {bits: 5, name: 'Ms1', attr: 'source 1', type: 4},
   {bits: 5, name: 'Ms2', attr: 'source 2', type: 4},
   {bits: 1, name: 'vm'},
@@ -14,12 +14,12 @@ Format for Matrix Arithmetic Instructions under OP-Xmaze1
 ]}
 ```
 
-// OPZIXV
+// OPZFXV
 ```wavedrom
 {reg:[
-  {bits: 7, name: 0x77, attr: 'OPZIXV'},
+  {bits: 7, name: 0x77, attr: 'OPZFXV'},
   {bits: 5, name: 'Md', attr: ['destination'], type: 2},
-  {bits: 3, name: 0x1},
+  {bits: 3, name: 0x5},
   {bits: 5, name: 'Ms1', attr: 'source 1', type: 4},
   {bits: 5, name: 'Vs2', attr: 'source 2', type: 4},
   {bits: 1, name: 'vm'},
@@ -31,9 +31,9 @@ Format for Matrix Arithmetic Instructions under OP-Xmaze1
 // OPZIXS
 ```wavedrom
 {reg:[
-  {bits: 7, name: 0x77, attr: 'OPZIXS'},
+  {bits: 7, name: 0x77, attr: 'OPZFXS'},
   {bits: 5, name: 'Md', attr: ['destination'], type: 2},
-  {bits: 3, name: 0x2},
+  {bits: 3, name: 0x6},
   {bits: 5, name: 'Ms1', attr: 'source 1', type: 4},
   {bits: 5, name: 'Rs2', attr: 'source 2', type: 4},
   {bits: 1, name: 'vm'},
@@ -45,9 +45,9 @@ Format for Matrix Arithmetic Instructions under OP-Xmaze1
 // OPZIXI
 ```wavedrom
 {reg:[
-  {bits: 7, name: 0x77, attr: 'OPZIXI'},
+  {bits: 7, name: 0x77, attr: 'OPZFXI'},
   {bits: 5, name: 'Md', attr: ['destination'], type: 2},
-  {bits: 3, name: 0x3},
+  {bits: 3, name: 0x7},
   {bits: 5, name: 'Ms1', attr: 'source 1', type: 4},
   {bits: 5, name: 'imm[4:0]', attr: 'source 2', type: 4},
   {bits: 1, name: 'vm'},

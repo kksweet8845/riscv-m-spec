@@ -1,20 +1,48 @@
-Format for Vector AMO Instructions under AMO major opcode
-
-////
-31    27 26  25  24      20 19       15 14   12 11      7 6     0
- amoop  |wd| vm |   vs2    |    rs1    | width | vs3/vd  |0101111| VAMO*
-   5      1   1      5           5         3        5        7
-////
+Format for Matrix CFG(OPZCFG) Instructions under OP-Xmaze1 opcode
 
 ```wavedrom
 {reg:[
-  {bits: 7, name: 0x2f, attr: 'VAMO*'},
-  {bits: 5, name: 'vs3 / vd', attr: 'source / destination', type: 2},
-  {bits: 3, name: 'width'},
-  {bits: 5, name: 'rs1', attr: 'base', type: 4},
-  {bits: 5, name: 'vs2', attr: 'address', type: 2},
-  {bits: 1, name: 'vm'},
-  {bits: 1, name: 'wd'},
-  {bits: 5, name: 'amoop'},
+  {bits: 7, name: 0x6b, attr: 'mcfg'},
+  {bits: 5, name: 'rd', attr: ['destination'], type: 2},
+  {bits: 3, name: 0x3},
+  {bits: 5, name: 'rs1', attr: 'source', type: 4},
+  {bits: 2, name: 'mg', attr: ['Matrix','Group'], type: 3},
+  {bits: 2, name: 'off', attr: 'offset', type: 3},
+  {bits: 1, name: '0', type: 1},
+  {bits: 2, name: 'srcT', attr: ['Source', 'Type'], type: 3},
+  {bits: 2, name: 'ta', attr: ['Tail','agnostic'], type: 3},
+  {bits: 2, name: 'ma', attr: ['Mask','agnostic'], type: 3},
+  {bits: 1, name: '0', type: 1}
 ]}
 ```
+
+```wavedrom
+{reg:[
+  {bits: 7, name: 0x6b, attr: 'mcfgi'},
+  {bits: 5, name: 'rd', attr: ['destination'], type: 2},
+  {bits: 3, name: 0x3},
+  {bits: 5, name: 'uimm[4:0]', attr: 'source', type: 4},
+  {bits: 2, name: 'mg', attr: ['Matrix','Group'], type: 3},
+  {bits: 2, name: 'off', attr: 'offset', type: 3},
+  {bits: 1, name: '1', type: 1},
+  {bits: 2, name: 'srcT', attr: ['Source', 'Type'], type: 3},
+  {bits: 2, name: 'ta', attr: ['Tail','agnostic'], type: 3},
+  {bits: 2, name: 'ma', attr: ['Mask','agnostic'], type: 3},
+  {bits: 1, name: '0', type: 1}
+]}
+```
+
+```wavedrom
+{reg:[
+  {bits: 7, name: 0x6b, attr: 'mcfgi'},
+  {bits: 5, name: 'rd', attr: ['destination'], type: 2},
+  {bits: 3, name: 0x3},
+  {bits: 5, name: 'uimm[4:0]', attr: 'source', type: 4},
+  {bits: 5, name: 'rs2', attr: 'source', type: 4},
+  {bits: 2, name: 'srcT', attr: ['Source', 'Type'], type: 3},
+  {bits: 2, name: 'ta', attr: ['Tail','agnostic'], type: 3},
+  {bits: 2, name: 'ma', attr: ['Mask','agnostic'], type: 3},
+  {bits: 1, name: '0', type: 1}
+]}
+```
+

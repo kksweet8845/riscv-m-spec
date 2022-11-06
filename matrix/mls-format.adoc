@@ -1,0 +1,55 @@
+Format for Matrix Load Store Instruction under Load-FP major opcode
+
+
+// ZL*unit-stride
+```wavedrom
+{reg:[
+  {bits: 7, name: 0x07, attr: 'ZL*unit-stride'},
+  {bits: 5, name: 'Md', attr: ['destination'], type: 2},
+  {bits: 3, name: 'width'},
+  {bits: 5, name: 'Rs1', attr: 'source 1', type: 4},
+  {bits: 5, name: 'Rs2', attr: 'source 2', type: 4},
+  {bits: 1, name: 'vm'},
+  {bits: 2, name: 'mop'},
+  {bits: 1, name: '1', attr: 'mew', type: 1},
+  {bits: 3, name: 'nf'}
+]}
+```
+
+
+// ZL*indexed
+```wavedrom
+{reg:[
+  {bits: 7, name: 0x07, attr: 'ZL*indexed'},
+  {bits: 5, name: 'Md', attr: ['destination'], type: 2},
+  {bits: 3, name: 'width'},
+  {bits: 5, name: 'Rs1', attr: 'source 1', type: 4},
+  {bits: 5, name: 'Vs2', attr: 'source 2', type: 4},
+  {bits: 1, name: 'vm'},
+  {bits: 2, name: 'mop'},
+  {bits: 1, name: '1', attr: 'mew', type: 1},
+  {bits: 3, name: 'nf'}
+]}
+```
+
+
+
+// ZL*strided
+```wavedrom
+{reg:[
+  {bits: 7, name: 0x07, attr: 'ZL*indexed'},
+  {bits: 5, name: 'Md', attr: ['destination'], type: 2},
+  {bits: 3, name: 'width'},
+  {bits: 5, name: 'Rs1', attr: 'source 1', type: 4},
+  {bits: 5, name: 'Vs2', attr: 'source 2', type: 4},
+  {bits: 1, name: 'vm'},
+  {bits: 2, name: 'mop'},
+  {bits: 1, name: '1', attr: 'mew', type: 1},
+  {bits: 3, name: 'nf'}
+]}
+```
+
+
+
+
+

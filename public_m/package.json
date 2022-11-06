@@ -7,6 +7,17 @@
   },
   "chromium-args": "--enable-logging=stderr --headless --no-sandbox --disable-setuid-sandbox",
   "output": "riscv-m-spec.pdf",
-  "numPages": 0,
-  "TOC": []
+  "numPages": 9,
+  "TOC": [
+    {
+      "str": "",
+      "page": 2,
+      "items": []
+    },
+    {
+      "str": "Table of Contents",
+      "page": 2,
+      "items": []
+    }
+  ]
 }
