@@ -67,30 +67,29 @@ on the matrix registers. Formally, to describe a matrix with 3 parameters.
 . _VL_: It is the same as vector extension.
 . _MG_: Matrix Group, it is the matrix group that can spcify the number of group of matrix.
 
+=== Matrix Descriptor (MD) Example
 
-=== Matrix Example
+Basically, the format is as follows
 
-Basically, the format is a follows
-
-M0, _offset_, _VL_, _MG_
+* M0, _offset_, _VL_, _MG_
 
 ----
 Example M0, 3, VL, 1
 
-M0 = V0 | 0 - (VL-1)
-     V1 | 0 - (VL-1)
-     V2 | 0 - (VL-1)
+M0 = V0 | 0 ~ (VL-1)
+     V1 | 0 ~ (VL-1)
+     V2 | 0 ~ (VL-1)
      V3 | invalid
 ----
 
 ----
 Example M2, 1, VL, 2
 
-M2 = V8  |  0 - (VL-1)    
-     V9  |  0 - (VL-1)    
-     V10 |  0 - (VL-1)        
-     V11 |  0 - (VL-1)        
-     V12 |  0 - (VL-1)        
+M2 = V8  |  0 ~ (VL-1)    
+     V9  |  0 ~ (VL-1)    
+     V10 |  0 ~ (VL-1)        
+     V11 |  0 ~ (VL-1)        
+     V12 |  0 ~ (VL-1)        
      V13 |  invalid        
      V14 |  invalid        
      V15 |  invalid        
@@ -100,17 +99,33 @@ M2 = V8  |  0 - (VL-1)
 ----
 Example M2, 2, VL, 2
 
-M2 = V8  |  0 - (VL-1)    
-     V9  |  0 - (VL-1)    
-     V10 |  0 - (VL-1)        
-     V11 |  0 - (VL-1)        
-     V12 |  0 - (VL-1)        
-     V13 |  0 - (VL-1)        
+M2 = V8  |  0 ~ (VL-1)    
+     V9  |  0 ~ (VL-1)    
+     V10 |  0 ~ (VL-1)        
+     V11 |  0 ~ (VL-1)        
+     V12 |  0 ~ (VL-1)        
+     V13 |  0 ~ (VL-1)        
      V14 |  invalid        
      V15 |  invalid        
 ----
 
+=== Matrix Config Instruction Programming model
+
+Before starting the matrix operation, programmer needs to set up each of the dimension of the matrix. Take an simple example as following. Suppose there are two matrix (A, B) with dimension (M,K), (K, N) respectively. And we literally take M = 3, K = 8, N = 12. Hence, the programmer needs to specify the Matrix Descriptor(MD) first. And we take M0 as our A mastrix, and M2 as our B Matrix.
+
+* A matrix: `M0, 3, 8, 1`
+* B matrix: `M2, 0, 12, 2`
+
+After specifing this configuration via the `CFG` instruction(introduce later), then the hardware should auto derive the destination matrix regsiter with correct `MD`. The hardware can auto derive the matrix multiplication, it can benefit the chain of matrix multiplication.
+
+
 == Matrix Instruction Type
+
+=== Matrix `CFG` Type
+
+
+
+
 
 
 

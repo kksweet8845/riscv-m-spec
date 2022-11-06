@@ -1,0 +1,12 @@
+{
+  "name": "DataSheet",
+  "main": "index.html",
+  "node-main": "node-main.js",
+  "window": {
+    "show": false
+  },
+  "chromium-args": "--enable-logging=stderr --headless --no-sandbox --disable-setuid-sandbox",
+  "output": "riscv-m-spec.pdf",
+  "numPages": 0,
+  "TOC": []
+}

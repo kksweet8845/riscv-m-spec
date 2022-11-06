@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Hello RISC-V\"",
-    "build": "mkdir -p public && cd public && ../node_modules/.bin/datasheet -i ../v-spec.adoc -o riscv-v-spec.pdf && cd .."
+    "build": "mkdir -p public && cd public && ../node_modules/.bin/datasheet -i ../v-spec.adoc -o riscv-v-spec.pdf && cd ..",
+    "build-m": "mkdir -p public_m && cd public_m && ../node_modules/.bin/datasheet -i ../matrix/m-spec.adoc -o riscv-m-spec.pdf && cd .."
   },
   "repository": {
     "type": "git",
